@@ -39,15 +39,15 @@ class QnABot extends ActivityHandler {
             //console.log(context);
 
             var headers = {
-                'Ocp-Apim-Subscription-Key': process.env.OcpApimSubscriptionKey,
-                'Apim-Request-Id': process.env.ApimRequestId,
+                'Ocp-Apim-Subscription-Key': 'b08540d2ca17414ca2411b0bf8a8e031',//process.env.OcpApimSubscriptionKey,
+                'Apim-Request-Id': '4ffcac1c-b2fc-48ba-bd6d-b69d9942995a',//process.env.ApimRequestId,
                 'Content-Type': 'application/json'
             };
 
             var dataString = '{"kind":"Conversation","analysisInput":{"conversationItem":{"id":"1","text":"hello","modality":"text","language":"en-US","participantId":"1"}},"parameters":{"projectName":"dentist-assistant","verbose":true,"deploymentName":"dental-assistant-op","stringIndexType":"TextElement_V8"}}';
 
             var options = {
-                url: process.env.Endpoint,
+                url: 'https://mylanguageservice9.cognitiveservices.azure.com/language/:analyze-conversations?api-version=2022-10-01-preview',//process.env.Endpoint,
                 method: 'POST',
                 headers: headers,
                 body: dataString
